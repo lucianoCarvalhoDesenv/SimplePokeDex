@@ -12,7 +12,7 @@ namespace BlazorWasmServer.Server.Controllers
 {
     [ApiController]
 
-    [Route("api/[controller]")]
+    [Route("api/pokemon")]
     public class PokemonController : ControllerBase
     {
         private readonly ApplicationDbContext context;
