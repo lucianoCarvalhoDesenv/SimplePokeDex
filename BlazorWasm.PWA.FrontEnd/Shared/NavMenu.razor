@@ -5,11 +5,29 @@
     </button>
 </div>
 
-<div  @onclick="ToggleNavMenu">
+<div @onclick="ToggleNavMenu">
     <ul class="nav flex-column">
         <li class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="visualizarPokemon">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Pokemons
+            </NavLink>
+        </li>
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="cadastrarPokemon">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Cadastrar Pokemon
+            </NavLink>
+        </li>
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="listapokemons">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Lista Pokemons
             </NavLink>
         </li>
         <li class="nav-item px-3">
@@ -34,7 +52,7 @@
 @code {
     private bool collapseNavMenu = true;
 
-   
+
 
     private void ToggleNavMenu()
     {
