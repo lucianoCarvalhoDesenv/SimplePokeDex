@@ -30,7 +30,8 @@ namespace BlazorWasm.BackEnd.Migrations
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     Tipo = table.Column<string>(type: "TEXT", nullable: true),
                     GolpePrincipal = table.Column<string>(type: "TEXT", nullable: true),
-                    Forca = table.Column<int>(type: "INTEGER", nullable: false)
+                    Forca = table.Column<int>(type: "INTEGER", nullable: false),
+                    ImgUrl = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

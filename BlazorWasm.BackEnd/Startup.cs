@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -16,7 +15,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using BlazorWasmServer.Server.Helpers;
-//asdsad
 
 using System.Net.Http;
 using System.Text.Encodings.Web;

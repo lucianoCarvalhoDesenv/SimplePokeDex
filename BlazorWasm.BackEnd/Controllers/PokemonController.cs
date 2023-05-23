@@ -1,4 +1,5 @@
 ﻿using BlazorWasm.Compartilhado.Entidades;
+using BlazorWasmServer.Server.Helpers;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,9 +17,11 @@ namespace BlazorWasmServer.Server.Controllers
     public class PokemonController : ControllerBase
     {
         private readonly ApplicationDbContext context;
-        public PokemonController(ApplicationDbContext context)
+        private readonly IFileStorageService _fileStorageService;
+        public PokemonController(ApplicationDbContext context, IFileStorageService fileStorageService)
         {
             this.context = context;
+            _fileStorageService = fileStorageService;
         }
 
         #region Teste
@@ -51,6 +54,12 @@ namespace BlazorWasmServer.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<int>> Post(Pokemon pokemon)
         {
+            if (!string.IsNullOrEmpty(pokemon.ImgUrl))
+            {
+                var img = Convert.FromBase64String(pokemon.ImgUrl);
+                pokemon.ImgUrl = await _fileStorageService.SaveFile(img, "jpg", "img");
+            }
+
             context.Pokemons.Add(pokemon);
             await context.SaveChangesAsync();
             return pokemon.Id;

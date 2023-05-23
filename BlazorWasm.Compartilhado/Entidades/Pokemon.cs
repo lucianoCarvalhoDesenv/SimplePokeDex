@@ -13,5 +13,6 @@ namespace BlazorWasm.Compartilhado.Entidades
         public string Tipo { get; set; }
         public string GolpePrincipal { get; set; }
         public int Forca { get; set; }
+        public string ImgUrl { get; set; }
     }
 }

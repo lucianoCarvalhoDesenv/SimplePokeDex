@@ -9,15 +9,16 @@
     {
         <h2> @pokemon.Nome </h2>
         <br>
+        <img src="@pokemon.ImgUrl" style="width: 400px;" />
     }
 
 }
 
 @code {
-    List<Pokemon>? ListaPokemons=null;
+    List<Pokemon>? ListaPokemons = null;
 
     //Executa ao Inicializar O ComponenteGrafico
-    protected override  async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         //Pegar Lista de Pokemons DO Banco de Dados
         //Via chamada de API (chamanda encapsulada no Repositoty)

@@ -43,6 +43,9 @@ namespace BlazorWasm.BackEnd.Migrations
                     b.Property<string>("GolpePrincipal")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("ImgUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Nome")
                         .HasColumnType("TEXT");
 

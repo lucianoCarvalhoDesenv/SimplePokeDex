@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlazorWasm.BackEnd.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230516231727_Initial")]
+    [Migration("20230523223427_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,6 +43,9 @@ namespace BlazorWasm.BackEnd.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("GolpePrincipal")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ImgUrl")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Nome")
